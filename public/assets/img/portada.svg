@@ -1,0 +1,7 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 300 400" role="img" aria-label="Portada no disponible">
+  <rect width="300" height="400" fill="#F5EDF1"/>
+  <path d="M75 130h70a30 30 0 0 1 30 30v140a30 30 0 0 0-30-30H75z" fill="#6E2A4E" opacity=".75"/>
+  <path d="M225 130h-70a30 30 0 0 0-30 30v140a30 30 0 0 1 30-30h70z" fill="#D9A63C" opacity=".85"/>
+  <text x="150" y="360" text-anchor="middle" font-family="Segoe UI, Arial, sans-serif"
+        font-size="17" fill="#6E2A4E">Portada no disponible</text>
+</svg>

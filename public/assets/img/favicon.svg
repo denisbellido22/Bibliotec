@@ -1,0 +1,5 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64" role="img" aria-label="BiblioTech">
+  <rect width="64" height="64" rx="14" fill="#6E2A4E"/>
+  <path d="M14 18h11a6 6 0 0 1 6 6v24a6 6 0 0 0-6-6H14z" fill="#FAF7EC"/>
+  <path d="M50 18H39a6 6 0 0 0-6 6v24a6 6 0 0 1 6-6h11z" fill="#D9A63C"/>
+</svg>
