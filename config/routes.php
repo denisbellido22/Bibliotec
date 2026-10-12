@@ -31,4 +31,7 @@ return [
     'login'                 => ['AuthController', 'login', null],
     'logout'                => ['AuthController', 'logout', ['*']],
 
+    /* Panel del administrador (RF02). */
+    'admin/dashboard'       => ['AdminController', 'dashboard', ['administrador']],
+
 ];

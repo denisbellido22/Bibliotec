@@ -482,6 +482,46 @@ table { border-collapse: collapse; width: 100%; }
 
 .estadistica__nota { margin: .4rem 0 0; font-size: .85rem; color: var(--texto-suave); }
 
+/* Gráfico de barras simple ------------------------------------------------ */
+.grafico {
+    display: flex;
+    align-items: flex-end;
+    gap: .7rem;
+    height: 200px;
+    margin-top: 1rem;
+    padding-top: .5rem;
+    border-bottom: 1px solid var(--crema-borde);
+}
+
+.grafico__barra {
+    flex: 1;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+    align-items: center;
+    gap: .3rem;
+    min-width: 0;
+}
+
+.grafico__valor { font-size: .82rem; font-weight: 700; color: var(--vino); }
+
+.grafico__columna {
+    width: 100%;
+    max-width: 56px;
+    border-radius: var(--radio-sm) var(--radio-sm) 0 0;
+    background: linear-gradient(180deg, var(--vino-claro), var(--vino));
+    transition: height 420ms ease;
+}
+
+.grafico__etiqueta {
+    font-size: .74rem;
+    color: var(--texto-tenue);
+    white-space: nowrap;
+    margin-bottom: -.1rem;
+    padding-top: .35rem;
+}
+
 /* --------------------------------------------------------------------------
    8. Listas de datos
    -------------------------------------------------------------------------- */

@@ -83,6 +83,23 @@ function redirigir(string $ruta = '', array $parametros = []): never
     exit;
 }
 
+/**
+ * Indica si una ruta está registrada en config/routes.php.
+ *
+ * Permite que las vistas no muestren enlaces a módulos que todavía no
+ * existen, en lugar de ofrecer botones que terminan en un error 404.
+ */
+function ruta_existe(string $ruta): bool
+{
+    static $rutas = null;
+
+    if ($rutas === null) {
+        $rutas = require BASE_PATH . '/config/routes.php';
+    }
+
+    return array_key_exists(trim($ruta, '/'), $rutas);
+}
+
 /** Indica si la ruta actual coincide con la ruta indicada. */
 function ruta_activa(string $ruta): bool
 {
