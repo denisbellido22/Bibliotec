@@ -45,7 +45,11 @@ $rutaActual   = ruta_actual();
                 <small><?= e(nombre_rol($usuarioBarra['rol'])) ?></small>
             </span>
 
-            <a class="boton boton--salir" href="<?= e(url('logout')) ?>">Salir</a>
+            <?php /* Cierre de sesión por POST para exigir token CSRF. */ ?>
+            <form class="formulario-salir" method="post" action="<?= e(url('logout')) ?>">
+                <?= csrf_field() ?>
+                <button class="boton boton--salir" type="submit">Salir</button>
+            </form>
         <?php else: ?>
             <a class="boton boton--salir" href="<?= e(url('login')) ?>">Iniciar sesión</a>
         <?php endif; ?>

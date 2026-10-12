@@ -27,4 +27,8 @@ return [
     'catalogo'              => ['CatalogoController', 'index', null],
     'catalogo/ver'          => ['CatalogoController', 'ver', null],
 
+    /* Acceso al sistema (RF01). */
+    'login'                 => ['AuthController', 'login', null],
+    'logout'                => ['AuthController', 'logout', ['*']],
+
 ];

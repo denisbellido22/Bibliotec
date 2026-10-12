@@ -257,6 +257,76 @@ table { border-collapse: collapse; width: 100%; }
 .boton--bloque { width: 100%; }
 
 /* --------------------------------------------------------------------------
+   4b. Pantalla de acceso
+   -------------------------------------------------------------------------- */
+.pagina--acceso {
+    justify-content: center;
+    align-items: center;
+    padding: 2.5rem 1.2rem;
+    background:
+        radial-gradient(circle at 12% 12%, rgba(110, 42, 78, .10), transparent 42%),
+        radial-gradient(circle at 88% 84%, rgba(217, 166, 60, .14), transparent 46%),
+        var(--crema);
+}
+
+.acceso { width: 100%; max-width: 430px; }
+
+.acceso__marca {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: .6rem;
+    font-size: 1.5rem;
+    font-weight: 700;
+    color: var(--vino);
+    margin-bottom: .2rem;
+}
+
+.acceso__marca:hover { color: var(--vino-oscuro); }
+.acceso__marca .marca__icono { background: var(--vino); color: var(--blanco); }
+
+.acceso__subtitulo {
+    text-align: center;
+    color: var(--texto-suave);
+    font-size: .9rem;
+    margin-bottom: 1.4rem;
+}
+
+.acceso__tarjeta { padding: 1.8rem; }
+.acceso__titulo { margin-bottom: .2rem; font-size: 1.35rem; }
+.acceso .mensaje--error { margin-bottom: 1rem; }
+
+.acceso__pie {
+    margin-top: 1.5rem;
+    text-align: center;
+    font-size: .85rem;
+    color: var(--texto-suave);
+}
+
+.credenciales-demo {
+    margin-top: 1.3rem;
+    border-top: 1px dashed var(--crema-borde);
+    padding-top: .9rem;
+    font-size: .88rem;
+}
+
+.credenciales-demo summary {
+    cursor: pointer;
+    font-weight: 700;
+    color: var(--vino);
+}
+
+.credenciales-demo .lista-datos { margin: .7rem 0 .5rem; }
+.credenciales-demo code {
+    background: var(--crema);
+    padding: .1rem .3rem;
+    border-radius: 4px;
+    font-size: .85em;
+}
+
+.formulario-salir { display: inline-flex; margin: 0; }
+
+/* --------------------------------------------------------------------------
    5. Estructura general
    -------------------------------------------------------------------------- */
 .disposicion {
