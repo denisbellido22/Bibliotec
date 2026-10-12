@@ -83,6 +83,9 @@ return [
     'bibliotecario/reservas/confirmar' => ['ReservaController', 'confirmar', ['bibliotecario']],
     'bibliotecario/reservas/cancelar'  => ['ReservaController', 'cancelar', ['bibliotecario']],
 
+    /* Reportes y estadísticas (RF02). */
+    'admin/reportes' => ['ReporteController', 'index', ['administrador']],
+
     /* Panel del bibliotecario (RF04, RF07). */
     'bibliotecario/panel'  => ['BibliotecarioController', 'panel', ['bibliotecario']],
     'bibliotecario/libros' => ['BibliotecarioController', 'libros', ['bibliotecario']],

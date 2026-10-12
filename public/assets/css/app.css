@@ -522,6 +522,42 @@ table { border-collapse: collapse; width: 100%; }
     padding-top: .35rem;
 }
 
+/* Barras horizontales de proporción -------------------------------------- */
+.barras { list-style: none; margin: 1rem 0 0; padding: 0; display: flex; flex-direction: column; gap: .7rem; }
+
+.barras__fila {
+    display: grid;
+    grid-template-columns: 1fr 2fr auto;
+    align-items: center;
+    gap: .8rem;
+    font-size: .88rem;
+}
+
+.barras__etiqueta { color: var(--texto-suave); }
+
+.barras__pista {
+    display: block;
+    height: 10px;
+    border-radius: var(--radio-pill);
+    background: var(--vino-tenue);
+    overflow: hidden;
+}
+
+.barras__relleno {
+    display: block;
+    height: 100%;
+    border-radius: var(--radio-pill);
+    background: linear-gradient(90deg, var(--vino-claro), var(--vino));
+    transition: width 420ms ease;
+}
+
+.barras__valor { font-weight: 700; color: var(--vino); text-align: right; min-width: 2ch; }
+
+@media (max-width: 640px) {
+    .barras__fila { grid-template-columns: 1fr auto; }
+    .barras__pista { grid-column: 1 / -1; }
+}
+
 /* --------------------------------------------------------------------------
    8. Listas de datos
    -------------------------------------------------------------------------- */
