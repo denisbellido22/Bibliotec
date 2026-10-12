@@ -485,6 +485,37 @@ table { border-collapse: collapse; width: 100%; }
     z-index: 1;
 }
 
+/* Secciones de la página principal --------------------------------------- */
+.seccion { margin-top: 2.4rem; }
+
+.categorias {
+    display: grid;
+    gap: .9rem;
+    grid-template-columns: repeat(auto-fill, minmax(178px, 1fr));
+}
+
+.categoria-bloque {
+    display: flex;
+    flex-direction: column;
+    gap: .2rem;
+    background: var(--blanco);
+    border: 1px solid var(--crema-borde);
+    border-radius: var(--radio);
+    box-shadow: var(--sombra-sm);
+    padding: .95rem 1.1rem;
+    transition: transform var(--transicion), box-shadow var(--transicion),
+                border-color var(--transicion);
+}
+
+.categoria-bloque:hover {
+    transform: translateY(-2px);
+    box-shadow: var(--sombra);
+    border-color: var(--vino-claro);
+}
+
+.categoria-bloque__nombre { font-weight: 700; color: var(--vino); }
+.categoria-bloque__total { font-size: .82rem; color: var(--texto-tenue); }
+
 /* --------------------------------------------------------------------------
    10. Tablas
    -------------------------------------------------------------------------- */
