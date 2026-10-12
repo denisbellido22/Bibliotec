@@ -1,0 +1,59 @@
+# ==========================================================
+# BiblioTech - Archivos que NO deben subirse al repositorio
+# ==========================================================
+
+# --- Configuracion con credenciales reales ---
+# database.php usa valores por defecto de XAMPP (root sin contrasena).
+# Si necesitas credenciales privadas, crea config/database.local.php
+# (o config/.env) y NO lo subas: ya esta ignorado aqui.
+config/database.local.php
+config/.env
+.env
+.env.*
+!.env.example
+
+# --- Portadas subidas por los usuarios ---
+uploads/portadas/*
+!uploads/portadas/.gitkeep
+
+# --- Copias de seguridad con datos privados ---
+database/backups/
+*.sql.gz
+*.dump
+
+# --- Archivos temporales, registros y respaldos ---
+*.log
+logs/
+tmp/
+temp/
+*.tmp
+*.temp
+*.bak
+*.old
+*.orig
+*~
+
+# --- Sistema operativo ---
+Thumbs.db
+ehthumbs.db
+Desktop.ini
+desktop.ini
+.DS_Store
+$RECYCLE.BIN/
+
+# --- Editores e IDEs ---
+.vscode/
+.idea/
+*.sublime-project
+*.sublime-workspace
+nbproject/private/
+*.code-workspace
+
+# --- Dependencias y artefactos generados ---
+/vendor/
+/node_modules/
+composer.phar
+package-lock.json
+
+# --- Archivos de Office abiertos (bloqueos) ---
+~$*
