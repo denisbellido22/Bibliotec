@@ -124,16 +124,24 @@ function ruta_actual(): string
  */
 function render_vista(string $vista, array $datos = []): string
 {
-    $archivo = BASE_PATH . '/views/' . str_replace('.', '/', $vista) . '.php';
+    /*
+     * Los parámetros usan nombres reservados (prefijo __) a propósito: si se
+     * llamaran $datos, el extract() con EXTR_SKIP no podría crear una variable
+     * de vista llamada $datos y el formulario perdería sus valores.
+     */
+    $__archivoVista = BASE_PATH . '/views/' . str_replace('.', '/', $vista) . '.php';
 
-    if (!is_file($archivo)) {
+    if (!is_file($__archivoVista)) {
         throw new RuntimeException("No se encontró la vista: {$vista}");
     }
 
-    extract($datos, EXTR_SKIP);
+    $__variablesVista = $datos;
+    unset($datos, $vista);
+
+    extract($__variablesVista, EXTR_SKIP);
 
     ob_start();
-    require $archivo;
+    require $__archivoVista;
 
     return (string) ob_get_clean();
 }

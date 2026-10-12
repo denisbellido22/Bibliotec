@@ -769,6 +769,40 @@ select.campo__control {
 
 .formulario__acciones { display: flex; flex-wrap: wrap; gap: .6rem; align-items: center; }
 
+/* Bloque de carga de portada --------------------------------------------- */
+.grupo-portada {
+    border: 1px solid var(--crema-borde);
+    border-radius: var(--radio);
+    padding: 1rem 1.15rem 1.2rem;
+    margin: 0;
+    background: #FDFBF4;
+}
+
+.grupo-portada legend { padding: 0 .4rem; }
+
+.grupo-portada__cuerpo {
+    display: grid;
+    grid-template-columns: 140px 1fr;
+    gap: 1.2rem;
+    align-items: start;
+}
+
+.grupo-portada__vista {
+    width: 140px;
+    aspect-ratio: 3 / 4;
+    object-fit: cover;
+    border-radius: var(--radio-sm);
+    border: 1px solid var(--crema-borde);
+    background: var(--vino-tenue);
+}
+
+.grupo-portada__controles { display: flex; flex-direction: column; gap: .9rem; }
+
+@media (max-width: 640px) {
+    .grupo-portada__cuerpo { grid-template-columns: 1fr; }
+    .grupo-portada__vista { width: 110px; }
+}
+
 /* Buscador y filtros ----------------------------------------------------- */
 .filtros {
     background: var(--blanco);

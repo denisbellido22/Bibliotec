@@ -34,4 +34,11 @@ return [
     /* Panel del administrador (RF02). */
     'admin/dashboard'       => ['AdminController', 'dashboard', ['administrador']],
 
+    /* Gestión de libros (RF03, RF07). */
+    'admin/libros'          => ['LibroController', 'index', ['administrador']],
+    'admin/libros/crear'    => ['LibroController', 'crear', ['administrador']],
+    'admin/libros/ver'      => ['LibroController', 'ver', ['administrador']],
+    'admin/libros/editar'   => ['LibroController', 'editar', ['administrador']],
+    'admin/libros/eliminar' => ['LibroController', 'eliminar', ['administrador']],
+
 ];

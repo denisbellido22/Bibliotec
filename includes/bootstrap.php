@@ -16,6 +16,7 @@ require_once BASE_PATH . '/config/database.php';
 require_once BASE_PATH . '/includes/helpers.php';
 require_once BASE_PATH . '/includes/sesion.php';
 require_once BASE_PATH . '/includes/csrf.php';
+require_once BASE_PATH . '/includes/subidas.php';
 require_once BASE_PATH . '/includes/router.php';
 
 /*
