@@ -55,4 +55,8 @@ return [
     'admin/usuarios/estado'   => ['UsuarioController', 'estado', ['administrador']],
     'admin/usuarios/eliminar' => ['UsuarioController', 'eliminar', ['administrador']],
 
+    /* Roles y permisos (RF12). */
+    'admin/roles'          => ['RolController', 'index', ['administrador']],
+    'admin/roles/asignar'  => ['RolController', 'asignar', ['administrador']],
+
 ];
