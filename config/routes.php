@@ -83,6 +83,10 @@ return [
     'bibliotecario/reservas/confirmar' => ['ReservaController', 'confirmar', ['bibliotecario']],
     'bibliotecario/reservas/cancelar'  => ['ReservaController', 'cancelar', ['bibliotecario']],
 
+    /* Panel del bibliotecario (RF04, RF07). */
+    'bibliotecario/panel'  => ['BibliotecarioController', 'panel', ['bibliotecario']],
+    'bibliotecario/libros' => ['BibliotecarioController', 'libros', ['bibliotecario']],
+
     /* Multas: el personal registra pagos y condonaciones. */
     'admin/multas'          => ['MultaController', 'index', ['administrador']],
     'admin/multas/pagar'    => ['MultaController', 'pagar', ['administrador']],
