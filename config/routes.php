@@ -23,4 +23,8 @@ return [
     /* ---------------- Público ---------------- */
     ''                      => ['HomeController', 'index', null],
 
+    /* Catálogo: consultable sin sesión (RF04, RF05, RF06, RF07). */
+    'catalogo'              => ['CatalogoController', 'index', null],
+    'catalogo/ver'          => ['CatalogoController', 'ver', null],
+
 ];

@@ -702,6 +702,16 @@ select.campo__control {
     font-weight: 700;
 }
 
+/* Ficha detallada de un libro -------------------------------------------- */
+.ficha-libro__portada {
+    width: 100%;
+    max-width: 320px;
+    margin: 0 auto;
+    border-radius: var(--radio-sm);
+    box-shadow: var(--sombra);
+    background: var(--vino-tenue);
+}
+
 /* --------------------------------------------------------------------------
    15. Paginación
    -------------------------------------------------------------------------- */
