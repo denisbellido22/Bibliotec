@@ -448,6 +448,21 @@ function menu_rol(?array $usuario): array
     };
 }
 
+/**
+ * Prefijo de rutas que corresponde al rol indicado (o al autenticado).
+ *
+ * Permite compartir un mismo módulo entre el panel administrativo y el del
+ * bibliotecario sin duplicar controladores ni vistas.
+ */
+function prefijo_rol(?string $rol = null): string
+{
+    return match ($rol ?? rol_actual()) {
+        'administrador' => 'admin',
+        'bibliotecario' => 'bibliotecario',
+        default         => 'estudiante',
+    };
+}
+
 /** Título de la barra lateral según el rol. */
 function titulo_panel(?array $usuario): string
 {

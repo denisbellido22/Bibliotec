@@ -59,4 +59,19 @@ return [
     'admin/roles'          => ['RolController', 'index', ['administrador']],
     'admin/roles/asignar'  => ['RolController', 'asignar', ['administrador']],
 
+    /*
+     * Préstamos y devoluciones (RF13).
+     * El mismo controlador y las mismas vistas sirven a ambos paneles: sólo
+     * cambia el prefijo de la ruta y el rol autorizado.
+     */
+    'admin/prestamos'          => ['PrestamoController', 'index', ['administrador']],
+    'admin/prestamos/crear'    => ['PrestamoController', 'crear', ['administrador']],
+    'admin/prestamos/ver'      => ['PrestamoController', 'ver', ['administrador']],
+    'admin/prestamos/devolver' => ['PrestamoController', 'devolver', ['administrador']],
+
+    'bibliotecario/prestamos'          => ['PrestamoController', 'index', ['bibliotecario']],
+    'bibliotecario/prestamos/crear'    => ['PrestamoController', 'crear', ['bibliotecario']],
+    'bibliotecario/prestamos/ver'      => ['PrestamoController', 'ver', ['bibliotecario']],
+    'bibliotecario/prestamos/devolver' => ['PrestamoController', 'devolver', ['bibliotecario']],
+
 ];
