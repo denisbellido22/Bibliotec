@@ -6,6 +6,10 @@
  * se ejecuta en config/routes.php, cuyo arreglo `$roles` debe mantenerse
  * coherente con esta matriz.
  *
+ * La columna `rf` cita el requerimiento funcional de las instrucciones. Las
+ * funciones que las instrucciones describen en los perfiles de usuario sin
+ * asignarles código se etiquetan como «Perfil».
+ *
  * @return array<string, array{descripcion: string, roles: array<int, string>, rf: string}>
  */
 
@@ -60,31 +64,31 @@ return [
     'Gestión de reservas' => [
         'descripcion' => 'Consultar y gestionar las reservas de ejemplares.',
         'roles'       => ['administrador', 'bibliotecario'],
-        'rf'          => 'Reservas',
+        'rf'          => 'Perfil',
     ],
     'Gestión de multas' => [
         'descripcion' => 'Consultar multas, registrar pagos y condonaciones.',
         'roles'       => ['administrador', 'bibliotecario'],
-        'rf'          => 'Multas',
+        'rf'          => 'Perfil',
     ],
+    /*
+     * RF02 corresponde al panel administrativo: las instrucciones solo se lo
+     * asignan al Administrador, y el perfil del Bibliotecario no menciona
+     * reportes. El enrutador lo confirma denegando `admin/reportes`.
+     */
     'Reportes y estadísticas' => [
         'descripcion' => 'Consultar indicadores y reportes del sistema.',
-        'roles'       => ['administrador', 'bibliotecario'],
+        'roles'       => ['administrador'],
         'rf'          => 'RF02',
     ],
     'Mis préstamos, reservas y multas' => [
         'descripcion' => 'Consultar únicamente la información personal del estudiante autenticado.',
         'roles'       => ['estudiante'],
-        'rf'          => 'Estudiante',
+        'rf'          => 'Perfil',
     ],
     'Realizar reservas' => [
         'descripcion' => 'Reservar ejemplares y cancelar las reservas propias.',
         'roles'       => ['estudiante'],
-        'rf'          => 'Estudiante',
-    ],
-    'Registro de usuarios' => [
-        'descripcion' => 'Crear una cuenta propia desde el formulario de registro público.',
-        'roles'       => ['estudiante'],
-        'rf'          => 'Estudiante',
+        'rf'          => 'Perfil',
     ],
 ];
