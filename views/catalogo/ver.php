@@ -10,6 +10,7 @@ declare(strict_types=1);
 $disponible = (int) $libro['stock_disponible'];
 $total      = (int) $libro['stock_total'];
 $prestados  = max(0, $total - $disponible);
+$usuarioVer = usuario_actual();
 ?>
 <div class="encabezado">
     <div>
@@ -51,6 +52,31 @@ $prestados  = max(0, $total - $disponible);
                 <?= $disponible > 0 ? 'Disponible' : 'Agotado' ?>
             </span>
         </p>
+
+        <?php /* El estudiante autenticado puede reservar si hay ejemplares. */ ?>
+        <?php if (($usuarioVer['rol'] ?? null) === 'estudiante'): ?>
+            <?php if ($disponible > 0): ?>
+                <form method="post" action="<?= e(url('estudiante/reservas/crear')) ?>"
+                      data-unico-envio style="margin-top:.9rem">
+                    <?= csrf_field() ?>
+                    <input type="hidden" name="id_libro" value="<?= e((string) $libro['id']) ?>">
+                    <input type="hidden" name="origen" value="ficha">
+                    <button class="boton boton--primario" type="submit">Reservar este libro</button>
+                </form>
+                <p class="nota" style="margin-top:.5rem">
+                    Plazo de retiro: <?= e((string) config('reservas.dias_vigencia')) ?> días desde la reserva.
+                </p>
+            <?php else: ?>
+                <p class="nota" style="margin-top:.9rem">
+                    No es posible reservar: el título no tiene ejemplares disponibles.
+                </p>
+            <?php endif; ?>
+        <?php elseif ($usuarioVer === null): ?>
+            <p class="nota" style="margin-top:.9rem">
+                <a href="<?= e(url('login', ['destino' => 'catalogo/ver'])) ?>">Inicia sesión</a>
+                como estudiante para reservar este título.
+            </p>
+        <?php endif; ?>
     </div>
 </section>
 

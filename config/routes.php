@@ -74,4 +74,18 @@ return [
     'bibliotecario/prestamos/ver'      => ['PrestamoController', 'ver', ['bibliotecario']],
     'bibliotecario/prestamos/devolver' => ['PrestamoController', 'devolver', ['bibliotecario']],
 
+    /* Reservas: supervisión por el personal. */
+    'admin/reservas'           => ['ReservaController', 'index', ['administrador']],
+    'admin/reservas/confirmar' => ['ReservaController', 'confirmar', ['administrador']],
+    'admin/reservas/cancelar'  => ['ReservaController', 'cancelar', ['administrador']],
+
+    'bibliotecario/reservas'           => ['ReservaController', 'index', ['bibliotecario']],
+    'bibliotecario/reservas/confirmar' => ['ReservaController', 'confirmar', ['bibliotecario']],
+    'bibliotecario/reservas/cancelar'  => ['ReservaController', 'cancelar', ['bibliotecario']],
+
+    /* Reservas propias del estudiante (control de acceso por registro). */
+    'estudiante/reservas'          => ['ReservaController', 'misReservas', ['estudiante']],
+    'estudiante/reservas/crear'    => ['ReservaController', 'reservar', ['estudiante']],
+    'estudiante/reservas/cancelar' => ['ReservaController', 'cancelarPropia', ['estudiante']],
+
 ];
