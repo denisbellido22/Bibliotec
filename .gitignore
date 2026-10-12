@@ -16,6 +16,12 @@ config/.env
 uploads/portadas/*
 !uploads/portadas/.gitkeep
 
+# --- Volcado ORIGINAL de desarrollo ---
+# Conserva el archivo intacto en disco, pero NO se publica: contiene nombres,
+# correos reales y hashes de contrasena. La version publicable, anonimizada,
+# es database/bibliotech.demo.sql (generada con database/anonymize.php).
+database/bibliotech.sql
+
 # --- Copias de seguridad con datos privados ---
 database/backups/
 *.sql.gz
