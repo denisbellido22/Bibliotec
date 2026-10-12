@@ -47,4 +47,12 @@ return [
     'admin/categorias/editar'   => ['CategoriaController', 'editar', ['administrador']],
     'admin/categorias/eliminar' => ['CategoriaController', 'eliminar', ['administrador']],
 
+    /* Gestión de usuarios (RF09, RF10, RF11). */
+    'admin/usuarios'          => ['UsuarioController', 'index', ['administrador']],
+    'admin/usuarios/ver'      => ['UsuarioController', 'ver', ['administrador']],
+    'admin/usuarios/crear'    => ['UsuarioController', 'crear', ['administrador']],
+    'admin/usuarios/editar'   => ['UsuarioController', 'editar', ['administrador']],
+    'admin/usuarios/estado'   => ['UsuarioController', 'estado', ['administrador']],
+    'admin/usuarios/eliminar' => ['UsuarioController', 'eliminar', ['administrador']],
+
 ];

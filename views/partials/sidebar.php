@@ -16,6 +16,11 @@ $rutaActual     = ruta_actual();
         <nav class="lateral__menu">
             <?php foreach ($opciones as $opcion): ?>
                 <?php
+                // Sólo se enlazan módulos realmente registrados en el enrutador.
+                if (!ruta_existe($opcion['ruta'])) {
+                    continue;
+                }
+
                 // Una sección queda activa también en sus subpáginas.
                 $activa = $rutaActual === $opcion['ruta']
                     || str_starts_with($rutaActual, $opcion['ruta'] . '/');
