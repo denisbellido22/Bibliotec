@@ -83,6 +83,18 @@ return [
     'bibliotecario/reservas/confirmar' => ['ReservaController', 'confirmar', ['bibliotecario']],
     'bibliotecario/reservas/cancelar'  => ['ReservaController', 'cancelar', ['bibliotecario']],
 
+    /* Multas: el personal registra pagos y condonaciones. */
+    'admin/multas'          => ['MultaController', 'index', ['administrador']],
+    'admin/multas/pagar'    => ['MultaController', 'pagar', ['administrador']],
+    'admin/multas/condonar' => ['MultaController', 'condonar', ['administrador']],
+
+    'bibliotecario/multas'          => ['MultaController', 'index', ['bibliotecario']],
+    'bibliotecario/multas/pagar'    => ['MultaController', 'pagar', ['bibliotecario']],
+    'bibliotecario/multas/condonar' => ['MultaController', 'condonar', ['bibliotecario']],
+
+    /* Consulta de multas propias del estudiante. */
+    'estudiante/multas' => ['MultaController', 'misMultas', ['estudiante']],
+
     /* Reservas propias del estudiante (control de acceso por registro). */
     'estudiante/reservas'          => ['ReservaController', 'misReservas', ['estudiante']],
     'estudiante/reservas/crear'    => ['ReservaController', 'reservar', ['estudiante']],
