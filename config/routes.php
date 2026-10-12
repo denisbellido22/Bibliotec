@@ -96,6 +96,10 @@ return [
     'bibliotecario/multas/pagar'    => ['MultaController', 'pagar', ['bibliotecario']],
     'bibliotecario/multas/condonar' => ['MultaController', 'condonar', ['bibliotecario']],
 
+    /* Área personal del estudiante. */
+    'estudiante/panel'     => ['EstudianteController', 'panel', ['estudiante']],
+    'estudiante/prestamos' => ['EstudianteController', 'prestamos', ['estudiante']],
+
     /* Consulta de multas propias del estudiante. */
     'estudiante/multas' => ['MultaController', 'misMultas', ['estudiante']],
 
