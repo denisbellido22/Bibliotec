@@ -41,4 +41,10 @@ return [
     'admin/libros/editar'   => ['LibroController', 'editar', ['administrador']],
     'admin/libros/eliminar' => ['LibroController', 'eliminar', ['administrador']],
 
+    /* Gestión de categorías (RF08). */
+    'admin/categorias'          => ['CategoriaController', 'index', ['administrador']],
+    'admin/categorias/crear'    => ['CategoriaController', 'crear', ['administrador']],
+    'admin/categorias/editar'   => ['CategoriaController', 'editar', ['administrador']],
+    'admin/categorias/eliminar' => ['CategoriaController', 'eliminar', ['administrador']],
+
 ];
