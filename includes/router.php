@@ -34,7 +34,7 @@ function despachar(): void
 
     // 2) Protección CSRF para cualquier petición que modifica datos.
     if (es_post() && !csrf_verificar()) {
-        responder_error(419, 'La sesión del formulario expiró. Vuelve a intentarlo.');
+        responder_csrf();
 
         return;
     }
@@ -96,11 +96,25 @@ function responder_error(int $codigo, string $mensaje): void
     $vistas = [
         403 => 'errors/403',
         404 => 'errors/404',
-        419 => 'errors/419',
         500 => 'errors/500',
     ];
 
     $vista = $vistas[$codigo] ?? 'errors/404';
 
     echo render_vista($vista, ['mensaje' => $mensaje, 'codigo' => $codigo]);
+}
+
+/**
+ * Rechaza una petición POST sin token CSRF válido.
+ *
+ * Se responde 403 (prohibido) en lugar de un código inventado: Apache no
+ * admite códigos no estándar como 419 y la respuesta degradaría a 500.
+ */
+function responder_csrf(): void
+{
+    if (!headers_sent()) {
+        http_response_code(403);
+    }
+
+    echo render_vista('errors/csrf');
 }
